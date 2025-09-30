@@ -47,9 +47,7 @@ export default function NavBar() {
             : "max-h-0 opacity-0 scale-95 md:opacity-100 md:scale-100 md:max-h-full"
         )}
       >
-        <ul
-          className="flex flex-col md:flex-row md:gap-6 items-center gap-4 bg-white md:bg-transparent dark:bg-gray-900 p-4 md:p-0 shadow-md md:shadow-none"
-        >
+        <ul className="flex flex-col md:flex-row md:gap-6 items-center gap-4 bg-white md:bg-transparent dark:bg-gray-900 p-4 md:p-0 shadow-md md:shadow-none">
           <li>
             <NavLink href="/">Home</NavLink>
           </li>
@@ -61,6 +59,13 @@ export default function NavBar() {
           </li>
           <li>
             <NavLink href="/preise">Preise</NavLink>
+          </li>
+          <li>
+            <div className="contact-info md:hidden block">
+              <Button asChild>
+                <Link href="/contact">Kontakt</Link>
+              </Button>
+            </div>
           </li>
         </ul>
       </nav>
