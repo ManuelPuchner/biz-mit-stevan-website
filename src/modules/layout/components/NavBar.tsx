@@ -1,5 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 function NavLink({
   href,
@@ -19,15 +24,32 @@ function NavLink({
 }
 
 export default function NavBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="header container mx-auto relative flex justify-between items-center p-4">
+    <header className="container mx-auto relative flex justify-between items-center p-4">
+      {/* Logo */}
       <div className="logo">
         <Link href="/" className="text-2xl font-bold">
           Websters.at
         </Link>
       </div>
-      <nav className="absolute left-1/2 transform -translate-x-1/2">
-        <ul className="nav-links flex gap-4">
+
+      {/* Navigation */}
+      <nav
+        className={cn(
+          "absolute top-full left-0 w-full overflow-hidden md:static md:w-auto transition-all duration-300 ease-in-out",
+          isMenuOpen
+            ? "max-h-96 opacity-100 scale-100"
+            : "max-h-0 opacity-0 scale-95 md:opacity-100 md:scale-100 md:max-h-full"
+        )}
+      >
+        <ul
+          className="flex flex-col md:flex-row md:gap-6 items-center gap-4 bg-white dark:bg-gray-900 p-4 md:p-0 shadow-md md:shadow-none"
+        >
           <li>
             <NavLink href="/">Home</NavLink>
           </li>
@@ -43,7 +65,13 @@ export default function NavBar() {
         </ul>
       </nav>
 
-      <div className="contact-info">
+      {/* Mobile Menu Button */}
+      <Button className="md:hidden z-20" onClick={handleMenuClick}>
+        <Bars3Icon className="size-6" />
+      </Button>
+
+      {/* Kontakt Button */}
+      <div className="contact-info hidden md:block">
         <Button asChild>
           <Link href="/contact">Kontakt</Link>
         </Button>
