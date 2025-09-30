@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} relative antialiased grid grid-rows-[auto_1fr_auto] h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} relative antialiased grid grid-rows-[auto_1fr_auto] min-h-screen`}
       >
         <SessionProvider>
           <NavBar />
