@@ -15,7 +15,9 @@ export default function HomeTemplate() {
           <Image
             src="/assets/home/hero-image.png"
             alt="Hero Image"
-            className="w-full h-auto"
+            className="md:w-full md:h-auto
+            sm:w-1/2 sm:h-1/2
+            object-contain w-2/3 h-2/3"
             width={800}
             height={400}
           />
