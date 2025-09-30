@@ -48,7 +48,7 @@ export default function NavBar() {
         )}
       >
         <ul
-          className="flex flex-col md:flex-row md:gap-6 items-center gap-4 bg-white dark:bg-gray-900 p-4 md:p-0 shadow-md md:shadow-none"
+          className="flex flex-col md:flex-row md:gap-6 items-center gap-4 bg-white md:bg-transparent dark:bg-gray-900 p-4 md:p-0 shadow-md md:shadow-none"
         >
           <li>
             <NavLink href="/">Home</NavLink>

@@ -22,7 +22,7 @@ export default function HomeTemplate() {
         </div>
       </section>
 
-      <div className="hidden background min-h-screen w-screen absolute top-0 left-0 -z-10 overflow-hidden">
+      <div className=" background min-h-screen w-screen absolute top-0 left-0 -z-10 overflow-hidden">
         <img
           src="/assets/bg/bg-blob-2.png"
           className="absolute -top-50 right-0
