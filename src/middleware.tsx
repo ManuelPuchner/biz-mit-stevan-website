@@ -3,8 +3,8 @@ import { auth } from "@/auth"; // your auth.ts setup
 import { NextResponse } from "next/server";
 
 export default auth((req) => {
-  // if not logged in, redirect to sign-in
-  if (!req.auth && req.nextUrl.pathname !== "/") {
+  const protectedPaths: string[] = [];
+  if (!req.auth && protectedPaths.includes(req.nextUrl.pathname)) {
     return NextResponse.redirect(new URL("/api/auth/signin", req.url));
   }
 
